@@ -1,3 +1,5 @@
 #Carpetas y archivos a ignorar
 ./__pycache__/*
 ./validaciones/__pycache__/*
+./__pycache__
+./validaciones/validacion.cpython-311.pyc
