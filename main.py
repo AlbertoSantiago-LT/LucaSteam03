@@ -17,12 +17,12 @@ def menu():
     data = obtener_datos()
     opcion = input("Seleccione una opcion: ")
     if opcion == "1":
-        print(functions.alta_juego(data))
+        functions.alta_juego(data)
     elif opcion == "2":
-        print(functions.listado_juegos(data))
-    elif opcion == 3: 
-        functions.listado_nintendo
-    elif opcion == 4:
-        functions.listado_plataforma
+        functions.listado_juegos(data)
+    elif opcion == "3": 
+        print(functions.listar_nintendo(data))
+    elif opcion == "4":
+        functions.listado_plataforma(data)
         
 if __name__ == "__main__": menu()
