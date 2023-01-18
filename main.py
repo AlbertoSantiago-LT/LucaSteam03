@@ -22,7 +22,7 @@ def menu():
         print(functions.listado_juegos(data))
     elif opcion == 3: 
         functions.listado_nintendo
-    elif opcion == 4:
-        functions.listado_plataforma
+    elif opcion == "4":
+        print(functions.listado_plataforma(data))
         
 if __name__ == "__main__": menu()

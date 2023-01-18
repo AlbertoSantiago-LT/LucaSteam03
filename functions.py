@@ -8,4 +8,5 @@ def listado_nintendo(data):
     return "Nintendo"
 
 def listado_plataforma(data):
-    return "Plataforma"
+    #data[(data["Genre"] == "Platform")]
+    return data[(data["Genre"] == "Platform")]
