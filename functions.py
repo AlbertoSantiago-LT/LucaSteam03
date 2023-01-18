@@ -4,7 +4,7 @@ def alta_juego(data):
 def listado_juegos(data):
     return "Listado juegos"
 
-def listar_nintendo(data):
+def listado_nintendo(data):
     
     #Con esta funcionalidad de pandas se filtra por la columna que se escriba
     data = data[data["Publisher"] == "Nintendo"]
