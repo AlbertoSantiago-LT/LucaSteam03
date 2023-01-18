@@ -13,4 +13,5 @@ def listar_nintendo(data):
     return #data.head()
 
 def listado_plataforma(data):
-    return "Plataforma"
+    #data[(data["Genre"] == "Platform")]
+    return data[(data["Genre"] == "Platform")]

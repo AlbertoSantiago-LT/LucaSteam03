@@ -19,10 +19,10 @@ def menu():
     if opcion == "1":
         functions.alta_juego(data)
     elif opcion == "2":
-        functions.listado_juegos(data)
+        print(functions.listado_juegos(data))
     elif opcion == "3": 
-        print(functions.listar_nintendo(data))
+        print(functions.listado_nintendo(data))
     elif opcion == "4":
-        functions.listado_plataforma(data)
+        print(functions.listado_plataforma(data))
         
 if __name__ == "__main__": menu()
