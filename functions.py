@@ -2,7 +2,9 @@ def alta_juego(data):
     return "Alta juego"
 
 def listado_juegos(data):
-    return "Listado juegos"
+    
+    #te muestra la lista de los juegos que hay en la plataforma LucaSteam
+    return data[(data["Name"] == "Platform")]
 
 def listado_nintendo(data):
     
