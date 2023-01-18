@@ -1,17 +1,18 @@
 import os
 import functions
 import validaciones.validacion as validacion
+from termcolor import colored
 
 def menu():
-    print("Elige una opción del menú")
-    print("1. Dar de alta un juego")
-    print("2. Listado general de juegos")
-    print("3. Listado de juegos de la consola Nintendo")
-    print("4. Listado de juegos del género Plataforma")
-    
-    #HACER TRY CATCH PARA VALIDAR QUE SOLO SEA NUMEROS
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(colored("*********************************************", "green"))
+    print(colored("***Elige una opción del menú***", "green", attrs=["bold"]))
+    print(colored("*********************************************", "green"))
+    print(colored("1. Dar de alta un juego", "blue", attrs=["bold"]))
+    print(colored("2. Listado general de juegos", "blue", attrs=["bold"]))
+    print(colored("3. Listado de juegos de la consola Nintendo", "blue", attrs=["bold"]))
+    print(colored("4. Listado de juegos del género Plataforma", "blue", attrs=["bold"]))
 
-    #data = obtener_datos()
     #opcion = input("Seleccione una opcion: ")
     opcion = validacion.is_numero_positivo("Seleccione una opcion: ")
     if opcion == 1:
