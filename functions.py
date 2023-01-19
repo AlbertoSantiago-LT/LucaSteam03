@@ -126,7 +126,26 @@ def listar_desarrolladores():
     print(data.sort_values(by="Publisher").Publisher.unique())
     
 def listado_rango():
+    
     data = obtener_datos()
     n1 = validacion.is_numero_positivo("Seleciona el inicio del rango desde donde quieres que se empiece a listar: ")
     n2 = validacion.is_numero_positivo("Seleciona el final del rango donde quieres que se termine el listado: ")
     print(data.iloc[n1:n2])
+    
+def listado_genero():
+
+    data = obtener_datos()
+    seguir = True
+    while seguir == True:
+        generos_permitidos = data.Genre.unique()
+        #["Action", "Adventure", "Fighting", "Misc", "Platform", "Puzzle", "Racing", "Role-Playing", "Shooter", "Simulation", "Sports", "Strategy"]
+
+        genero = input(f"Los generos permitidos son {generos_permitidos}\nEscribe el genero del juego: ")
+        print()
+
+        #os.system('cls')
+        if genero not in generos_permitidos:
+            print("Género no válido.")
+        else: 
+            seguir = False
+            return data[(data["Genre"] == genero)]
