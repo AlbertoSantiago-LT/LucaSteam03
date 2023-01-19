@@ -34,8 +34,6 @@ def menu():
             print("El numero no corresponde a ninguna accion, volviendo al menú")
             time.sleep(1.5)
         
-        
-        
 def menu_listados():
     opcion = -1
     while opcion!=0:
