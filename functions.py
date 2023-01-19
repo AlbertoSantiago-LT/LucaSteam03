@@ -88,6 +88,27 @@ def validarGenero(data):
         else: 
             seguir = False
             return genero
+
+def listado_genero():
+    # genero = imput
+    # data= obtener_datos()
+    # os.system('cls')
+    # return data[(data["Genre"] == genero)]  
+    data = obtener_datos()
+    seguir = True
+    while seguir == True:
+        generos_permitidos = data.Genre.unique()
+        #["Action", "Adventure", "Fighting", "Misc", "Platform", "Puzzle", "Racing", "Role-Playing", "Shooter", "Simulation", "Sports", "Strategy"]
+
+        genero = input(f"Los generos permitidos son {generos_permitidos}\nEscribe el genero del juego: ")
+        print()
+        
+        #os.system('cls')
+        if genero not in generos_permitidos:
+            print("Género no válido.")
+        else: 
+            seguir = False
+            return data[(data["Genre"] == genero)]          
             
 def validarPlataforma(data):
 
