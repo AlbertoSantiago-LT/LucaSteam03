@@ -125,8 +125,8 @@ def listar_desarrolladores():
     data = obtener_datos()
     print(data.sort_values(by="Publisher").Publisher.unique())
     
-def listar_rango():
+def listado_rango():
     data = obtener_datos()
-    n1 = validacion.is_numero_positivo("Escribe el primer elemento que quieres ver")
-    n2 = validacion.is_numero_positivo("Escribe el fin del rango que quieres ver")
-    print(data.iloc[n1,n2])
+    n1 = validacion.is_numero_positivo("Seleciona el inicio del rango desde donde quieres que se empiece a listar: ")
+    n2 = validacion.is_numero_positivo("Seleciona el final del rango donde quieres que se termine el listado: ")
+    print(data.iloc[n1:n2])
