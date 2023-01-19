@@ -5,7 +5,7 @@ import validaciones.validacion as validacion
 
 def obtener_datos():
     try:
-        data = pd.read_csv("./datos/vgsales.csv")
+        data = pd.read_csv("./recursosgenerados/csv_alta.csv")
         return data
     except FileNotFoundError:
         print("FileNotFound")
@@ -29,13 +29,34 @@ def pedir_datos ():
     return juego_nuevo
 
 def alta_juego():
+    os.system('cls')
     data= obtener_datos()
     os.system('cls')
-    juego_nuevo =pedir_datos()
-    data = data.append(juego_nuevo, ignore_index = True)
-    data.to_csv("./recursosgenerados/csv_alta.csv")
-    print(data.tail(4))
-    return "Alta juego"
+    salir="SI"
+    contador=0
+    while salir == "SI" or salir == "si" :
+        juego_nuevo =pedir_datos()
+        os.system('cls')
+        respuesta=input(f"{juego_nuevo}\n ¿Datos introducidos bien? SI,NO ")
+        if respuesta == "SI" or respuesta == "si":
+            contador += 1
+            data = data.append(juego_nuevo, ignore_index = True)
+            data.to_csv("./recursosgenerados/csv_alta.csv")
+            salir=input("¿Quieres introducirlo Otro? NO,SI ")
+            os.system('cls')
+        else:
+            salir=input("¿Quieres introducirlo Otro? NO,SI ")
+            os.system('cls')
+    print(data.tail(contador))
+    return contador
+
+def listado_alta_juegos(datos):
+    data= obtener_datos()
+    if datos == "":
+        print("nada")
+    else:
+        print(data.tail(datos))
+        return data.tail(datos)
 
 def validar_fecha():
         

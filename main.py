@@ -9,6 +9,7 @@ seguir = True
 
 def menu():
     opcion = -1
+    almacen=""
     while opcion!=0:
         
         os.system("cls")
@@ -24,17 +25,18 @@ def menu():
        
         opcion = validacion.is_numero_positivo("Seleccione una opcion: ")
         if opcion == 1:
-            functions.alta_juego()
+            almacen=functions.alta_juego()
             functions.esperarInput()
         elif opcion == 2:
-            menu_listados()
+            menu_listados(almacen)
         elif opcion==0:
             print("Cerrando LucaSteam03...")
+            print(almacen)
         else:
             print("El numero no corresponde a ninguna accion, volviendo al menú")
             time.sleep(1.5)
         
-def menu_listados():
+def menu_listados(dato):
     opcion = -1
     while opcion!=0:
         os.system("cls")
@@ -53,7 +55,7 @@ def menu_listados():
         print(Fore.YELLOW + "0. Salir                                     *")
 
         opcion = validacion.is_numero_positivo("Seleccione una opcion: ")
-        if opcion == 1: 
+        if opcion == 1:
             print(functions.listado_juegos())
             functions.esperarInput()
         elif opcion == 2:
@@ -63,7 +65,7 @@ def menu_listados():
             print(functions.listado_plataforma())
             functions.esperarInput() 
         elif opcion == 4:
-            print(functions.listado_alta_juegos())
+            a=functions.listado_alta_juegos(dato)
             functions.esperarInput() 
         elif opcion == 5:
             print(functions.listado_rango())
