@@ -107,3 +107,13 @@ def validarPlataforma(data):
 def esperarInput():
     print("Pulsa enter para continuar")
     input("")
+    
+def listar_desarrolladores():
+    data = obtener_datos()
+    print(data.sort_values(by="Publisher").Publisher.unique())
+    
+def listar_rango():
+    data = obtener_datos()
+    n1 = validacion.is_numero_positivo("Escribe el primer elemento que quieres ver")
+    n2 = validacion.is_numero_positivo("Escribe el fin del rango que quieres ver")
+    print(data.iloc[n1,n2])
