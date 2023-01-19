@@ -47,9 +47,9 @@ def menu_listados():
         print(Fore.YELLOW + "3. Listado de juegos del género Plataforma   *")
         print(Fore.YELLOW + "4. Listado de juegos dados de alta           *")
         print(Fore.YELLOW + "5. Listado de juegos dado un rango a elegir  *")
-        print(Fore.YELLOW + "5. Listado de desarrolladores de los juegos  *")
-        print(Fore.YELLOW + "6. Listado filtrado por siglo                *")
-        print(Fore.YELLOW + "7. Listado filtrado por género               *")
+        print(Fore.YELLOW + "6. Listado de desarrolladores de los juegos  *")
+        print(Fore.YELLOW + "7. Listado filtrado por siglo                *")
+        print(Fore.YELLOW + "8. Listado filtrado por género               *")
         print(Fore.YELLOW + "0. Salir                                     *")
 
         opcion = validacion.is_numero_positivo("Seleccione una opcion: ")

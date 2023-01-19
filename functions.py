@@ -88,7 +88,6 @@ def validarGenero(data):
         else: 
             seguir = False
             return genero
-<<<<<<< HEAD
 
 def listado_genero():
     # genero = imput
@@ -110,9 +109,7 @@ def listado_genero():
         else: 
             seguir = False
             return data[(data["Genre"] == genero)]          
-=======
->>>>>>> cc2d547ef99d5fd480e9c8a9013b11ce49e45951
-            
+           
 def validarPlataforma(data):
 
     seguir = True
@@ -128,6 +125,30 @@ def validarPlataforma(data):
             seguir = False
             return plataforma
 
+def listado_siglo():
+    data= obtener_datos()
+    os.system('cls')
+    siglo=validacion.is_numero_positivo("Indica los juegos del siglo que quieres ver 20 o 21: ")
+    while siglo != 20 and siglo != 21:
+        print("Tienes que introducir 20 o 21")
+        siglo=validacion.is_numero_positivo("Indica los juegos del siglo que quieres ver 20 o 21: ")
+    if siglo == 20 :
+        return data[(data["Year"] > 1901) & (data["Year"] < 2000 )]
+    else:
+        return data[(data["Year"] > 2001) & (data["Year"] < 2100 )]
+    
+
 def esperarInput():
     print("Pulsa enter para continuar")
     input("")
+    
+def listar_desarrolladores():
+    data = obtener_datos()
+    print(data.sort_values(by="Publisher").Publisher.unique())
+    
+def listado_rango():
+    
+    data = obtener_datos()
+    n1 = validacion.is_numero_positivo("Seleciona el inicio del rango desde donde quieres que se empiece a listar: ")
+    n2 = validacion.is_numero_positivo("Seleciona el final del rango donde quieres que se termine el listado: ")
+    print(data.iloc[n1:n2])
