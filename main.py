@@ -6,8 +6,8 @@ import validaciones.validacion as validacion
 seguir = True
 
 def menu():
-    opcion = 0
-    while opcion!=6:
+    opcion = -1
+    while opcion!=0:
         
         os.system("cls")
         print("\nLucaSteam03 ")
@@ -19,7 +19,7 @@ def menu():
         print("3. Listado de juegos de la consola Nintendo  *")
         print("4. Listado de juegos del género Plataforma   *")
         print("5. Mostrar juegos dados de alta              *")
-        print("6. Salir                                     *")
+        print("0. Salir                                     *")
         print("**********************************************")
        
         opcion = validacion.is_numero_positivo("Seleccione una opcion: ")
@@ -35,7 +35,7 @@ def menu():
         elif opcion == 4:
             print(functions.listado_plataforma())
             functions.esperarInput()
-        elif opcion==6:
+        elif opcion==0:
             print("Cerrando LucaSteam03...")
         else:
             print("El numero no corresponde a ninguna accion, volviendo al menú")
