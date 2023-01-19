@@ -88,6 +88,7 @@ def validarGenero(data):
         else: 
             seguir = False
             return genero
+<<<<<<< HEAD
 
 def listado_genero():
     # genero = imput
@@ -109,6 +110,8 @@ def listado_genero():
         else: 
             seguir = False
             return data[(data["Genre"] == genero)]          
+=======
+>>>>>>> cc2d547ef99d5fd480e9c8a9013b11ce49e45951
             
 def validarPlataforma(data):
 

@@ -1,4 +1,3 @@
-import os
 def is_numero_positivo(texto):
     validar=0
     while validar == 0:
@@ -8,4 +7,4 @@ def is_numero_positivo(texto):
                 raise ValueError
             return numero
         except ValueError:
-            print("Tiene que ser numero y mayor a 0 ")
+            print("Tiene que ser un número positivo")
