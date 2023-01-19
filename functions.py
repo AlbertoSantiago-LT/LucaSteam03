@@ -37,15 +37,15 @@ def alta_juego():
     while salir == "SI" or salir == "si" :
         juego_nuevo =pedir_datos()
         os.system('cls')
-        respuesta=input(f"{juego_nuevo}\n ¿Datos introducidos bien? SI,NO ")
+        respuesta=input(f"{juego_nuevo}\n ¿Los datos introducidos son correctos? SI,NO ")
         if respuesta == "SI" or respuesta == "si":
             contador += 1
             data = data.append(juego_nuevo, ignore_index = True)
             data.to_csv("./recursosgenerados/csv_alta.csv")
-            salir=input("¿Quieres introducirlo Otro? NO,SI ")
+            salir=input("¿Quieres insertar otro juego? NO,SI ")
             os.system('cls')
         else:
-            salir=input("¿Quieres introducirlo Otro? NO,SI ")
+            salir=input("¿Quieres introducir otro juego? NO,SI ")
             os.system('cls')
     print(data.tail(contador))
     return contador
@@ -90,7 +90,8 @@ def listado_nintendo():
 def listado_plataforma():
     data= obtener_datos()
     os.system('cls')
-    return data[(data["Genre"] == "Platform")]
+    data = data[data["Genre"] == "Platform"]
+    return data
 
 
 def validarGenero(data):
@@ -165,11 +166,11 @@ def esperarInput():
     
 def listar_desarrolladores():
     data = obtener_datos()
-    print(data.sort_values(by="Publisher").Publisher.unique())
+    return(data.sort_values(by="Publisher").Publisher.unique())
     
 def listado_rango():
     
     data = obtener_datos()
     n1 = validacion.is_numero_positivo("Seleciona el inicio del rango desde donde quieres que se empiece a listar: ")
     n2 = validacion.is_numero_positivo("Seleciona el final del rango donde quieres que se termine el listado: ")
-    print(data.iloc[n1:n2])
+    return(data.iloc[n1:n2])
