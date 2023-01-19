@@ -104,6 +104,19 @@ def validarPlataforma(data):
             seguir = False
             return plataforma
 
+def listado_siglo():
+    data= obtener_datos()
+    os.system('cls')
+    siglo=validacion.is_numero_positivo("Indica los juegos del siglo que quieres ver 20 o 21: ")
+    while siglo != 20 and siglo != 21:
+        print("Tienes que introducir 20 o 21")
+        siglo=validacion.is_numero_positivo("Indica los juegos del siglo que quieres ver 20 o 21: ")
+    if siglo == 20 :
+        return data[(data["Year"] > 1901) & (data["Year"] < 2000 )]
+    else:
+        return data[(data["Year"] > 2001) & (data["Year"] < 2100 )]
+    
+
 def esperarInput():
     print("Pulsa enter para continuar")
     input("")
