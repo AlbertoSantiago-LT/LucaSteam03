@@ -34,18 +34,18 @@ def alta_juego():
     os.system('cls')
     salir="SI"
     contador=0
-    while salir == "SI" or salir == "si" :
+    while salir == "SI" or salir == "si" or salir =="s":
         juego_nuevo =pedir_datos()
         os.system('cls')
-        respuesta=input(f"{juego_nuevo}\n ¿Los datos introducidos son correctos? SI,NO ")
-        if respuesta == "SI" or respuesta == "si":
+        respuesta=input(f"{juego_nuevo}\n ¿Los datos introducidos son correctos? [SI,NO]: ")
+        if respuesta == "SI" or respuesta == "si" or respuesta =="s":
             contador += 1
             data = data.append(juego_nuevo, ignore_index = True)
             data.to_csv("./recursosgenerados/csv_alta.csv")
-            salir=input("¿Quieres insertar otro juego? NO,SI ")
+            salir=input("¿Quieres insertar otro juego? [NO,SI]: ")
             os.system('cls')
         else:
-            salir=input("¿Quieres introducir otro juego? NO,SI ")
+            salir=input("¿Quieres introducir otro juego? [NO,SI]: ")
             os.system('cls')
     print(data.tail(contador))
     return contador
